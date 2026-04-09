@@ -186,14 +186,22 @@ public:
 
     CapTargetInfo* getCapTargetInfo() const { return mCapTargetInfo; }
 
+    bool isSeparateFlying() const { return mIsSeparateFlying; }
+
+    void setIsHide(bool isHide) { mIsHide = isHide; }
+
 private:
     unsigned char _108[0x10];
     al::LiveActor* mActorA;
     unsigned char _120[0x08];
     al::LiveActor* mPlayerActor;
-    void* _130[0x1f];
+    unsigned char _130[0xf8];
     CapTargetInfo* mCapTargetInfo;
-    void* _230[0x7c];
+    unsigned char _230[0x74];
+    bool mIsSeparateFlying;
+    unsigned char _2a5[0x313];
+    bool mIsHide;
+    unsigned char _5b9[0x57];
 };
 
 static_assert(sizeof(HackCap) == 0x610);
